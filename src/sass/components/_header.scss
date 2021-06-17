@@ -1,15 +1,17 @@
-.header__logo{
+.header{
+    &__logo{
     width: 100px;
     position: absolute;
     margin-top: 10px;
     margin-left: 10px;
-}
+    }
 
-.header__container{
+    &__container{
     background-color: #ccd5db;
     
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    }
 }

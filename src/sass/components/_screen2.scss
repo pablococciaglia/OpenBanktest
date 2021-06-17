@@ -1,18 +1,70 @@
-.screen2__triangulo{
+.screen2{
+    &__triangulo{
     position: absolute;
     transform: translate(48vw, -34px);
     width: 50px;
     z-index: 1000;
-}
+    }
 
-.screen2__error{
+    &__error{
     color: red;
-}
+    }
 
-.screen2__inputtext{
+    &__inputtext{
     font-size: 25px;
     font-family: 'Quicksand', sans-serif;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
     color:$secondary-color;
+    }
+
+    &__icons{
+    color: #3fc3e0;
+    }
+
+    &__infoicon{
+    position: absolute;
+    transform: translate(-260px,37px);
+    color: #3fc3e0;
+    }
+
+    &__eyeicon{
+    z-index: 1000;
+    position: absolute;
+    transform: translate(-90px, 31px);    
+    color: $secondary-color;
+    font-size: 30px;
+    }
+
+    &__contadorbox{
+    display: flex;
+    flex-direction:row-reverse;
+    }
+
+    &__contador{
+    font-size: 20px;
+    }
+
+    &__rulesbox{
+    margin-top: 25px;
+    }
+
+    &__passwordsbox{
+    margin-top: 25px;
+    display: flex;
+    justify-content:flex-start;
+    }
+
+    &__inputeyebox{
+    display: flex;
+    justify-content:flex-start;
+    }
+
+    &__pistabox{
+    margin-top: 25px;
+    }
+
+    &__eyeiconbox{
+    margin-left: 40px;
+    }
 }
 
 #password{
@@ -23,55 +75,6 @@
     width: 600px;
 }
 
-.screen2__icons{
-    color: #3fc3e0;
-}
-
-.screen2__infoicon{
-    position: absolute;
-    transform: translate(-260px,37px);
-    color: #3fc3e0;
-}
-
-.screen2__eyeicon{
-    z-index: 1000;
-    position: absolute;
-    transform: translate(-90px, 31px);    
-    color: $secondary-color;
-    font-size: 30px;
-}
-
-.screen2__contadorbox{
-    display: flex;
-    flex-direction:row-reverse;
-}
-
-.screen2__contador{
-    font-size: 20px;
-}
-
-.screen2__rulesbox{
-    margin-top: 25px;
-}
-
-.screen2__passwordsbox{
-    margin-top: 25px;
-    display: flex;
-    justify-content:flex-start;
-}
-
-.screen2__inputeyebox{
-    display: flex;
-    justify-content:flex-start;
-}
-
-.screen2__pistabox{
-    margin-top: 25px;
-}
-
-.screen2__eyeiconbox{
-    margin-left: 40px;
-}
 
 input[type="password"]{
     height: 51px;
@@ -83,49 +86,43 @@ input:placeholder-shown{
 }
 
 @media (max-width: 1550px) {
-    .screen2__triangulo{
+    .screen2{
+        &__triangulo{
         transform: translate(47.1vw, -34px);
-    }
+        }
     
-    .screen2__inputtext{
+        &__inputtext{
         font-size: 19px;
-    }
+        }
 
-    #password{
-        width: 400px;
-    }
-    
-    #confirmPassword{
-        width: 400px;
-    }
-    
-    .screen2__infoicon{
+        &__infoicon{
         transform: translate(-105px,33px);
-    }
+        }
     
-    .screen2__eyeicon{
+        &__eyeicon{
         transform: translate(-75px, 28px);    
         font-size: 30px;
-    }
+        }
     
-    .screen2__contador{
+        &__contador{
         font-size: 15px;
-    }
+        }
     
-    .screen2__rulesbox{
+        &__rulesbox{
         margin-top: 19px;
-    }
+        }
     
-    .screen2__passwordsbox{
+        &__passwordsbox{
         margin-top: 19px;
-    }
+        }
     
-    .screen2__pistabox{
+        &__pistabox{
         margin-top: 19px;
-    }
+        }
     
-    .screen2__eyeiconbox{
+        &__eyeiconbox{
         margin-left: 30px;
+        }
     }
     
     input[type="password"]{
@@ -136,61 +133,63 @@ input:placeholder-shown{
     input:placeholder-shown{
         font-size: 19px;
     }
-} 
-
-@media (max-width: 1100px) {
-    .screen2__triangulo{
-        transform: translate(45.8vw, -34px);
-    }
-    
-    .screen2__inputtext{
-        font-size: 16px;
-    }
 
     #password{
-        min-width: 100%;
+        width: 400px;
     }
     
     #confirmPassword{
-        min-width: 100%;
-    }
-    
-    .screen2__error{
-        font-size: 11px;
-    }
+        width: 400px;
+    }    
+} 
 
-    .screen2__infoicon{
-        transform: translate(-30px,32px);
-    }
+@media (max-width: 1100px) {
+    .screen2{
+        &__triangulo{
+        transform: translate(45.8vw, -34px);
+        }
     
-    .screen2__eyeicon{
+        &__inputtext{
+        font-size: 16px;
+        }
+
+        &__error{
+        font-size: 11px;
+        }
+
+        &__infoicon{
+        transform: translate(-30px,32px);
+        }
+    
+        &__eyeicon{
         transform: translate(-65px, 25px);    
         font-size: 27px;
-    }
+        }
 
-    .screen2__inputeyebox{
+        &__inputeyebox{
         display: flex;
-    }
+        }
     
-    .screen2__contador{
+        &__contador{
         font-size: 15px;
-    }
+        }
     
-    .screen2__rulesbox{
+        &__rulesbox{
         margin-top: 17px;
-    }
+        }
     
-    .screen2__passwordsbox{
+        &__passwordsbox{
         margin-top: 17px;
         flex-direction:column
-    }
+        }
     
-    .screen2__pistabox{
+        &__pistabox{
         margin-top: 17px;
-    }
+        }
     
-    .screen2__eyeiconbox{
+        &__eyeiconbox{
         margin-left: 30px;
+        }
     }
     
     input[type="password"]{
@@ -200,5 +199,13 @@ input:placeholder-shown{
     
     input:placeholder-shown{
         font-size: 17px;
+    }
+    
+    #password{
+        min-width: 100%;
+    }
+    
+    #confirmPassword{
+        min-width: 100%;
     }
 }

@@ -1,58 +1,64 @@
-.screen3__triangulo{
+.screen3{
+    &__triangulo{
     position: absolute;
     transform: translate(80vw, -34px);
     width: 50px;
     z-index: 1000;
-}
+    }
 
-.screen3__icon{
+    &__icon{
     cursor: pointer;
     width:60px;
     float: left;
     margin-right: 30px;
-}
+    }
 
-.screen3__buttonbox{
+    &__buttonbox{
     display: flex;
     justify-content:flex-end
-}
+    }
 
-.screen3__button{
+    &__button{
     cursor: pointer;
     color: $primary-color;
     font-size: 30px;
     font-weight: 600;
     padding-bottom: 30px;
+    }
 }
 
 @media (max-width: 1550px) {
-    .screen3__triangulo{
+    .screen3{
+        &__triangulo{
         transform: translate(78.5vw, -34px);
-    }
+        }
     
-    .screen3__icon{
+        &__icon{
         width:45px;
         margin-right: 22px;
-    }
+        }
         
-    .screen3__button{
+        &__button{
         font-size: 22px;
         padding-bottom: 22px;
+        }
     }
 } 
 
 @media (max-width: 1100px){
-    .screen3__triangulo{
+    .screen3{
+        &__triangulo{
         transform: translate(77.5vw, -34px);
-    }
+        }
     
-    .screen3__icon{
+        &__icon{
         width:37px;
         margin-right: 20px;
-    }
+        }
         
-    .screen3__button{
+        &__button{
         font-size: 19px;
         padding-bottom: 20px;
+        }
     }
 }
