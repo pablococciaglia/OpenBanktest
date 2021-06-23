@@ -1,28 +1,34 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
+/* import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
-/* Declaración de estilos del spiner que se utiliza como loading screen */
+ Declaración de estilos del spiner que se utiliza como loading screen 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: '100%',
     '& > * + *': {
-      marginLeft: theme.spacing(2),
+      marginTop: theme.spacing(2),
+      
     },
   },
-}));
+})); */
 
 export const Loading = () => {
   
-  const classes = useStyles();
+ /*  const classes = useStyles(); */
 
   return (
-    <div className="loading__container animate__animated animate__fadeIn">
-      <div className="loading__window">
-        <div className={classes.root}>
-          <CircularProgress color="secondary" />
+    <div className="d-flex justify-content-center loading__container animate__animated animate__fadeIn">
+      <div className="loading__box">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-primary" role="status"></div>
+          <span class="sr-only">Loading...</span>
         </div>
-        <h2 className="loading__text">Espere un momento por favor</h2>          
+{/*         <div className={classes.root}>
+          <LinearProgress />
+        </div> */}
       </div>
+      
     </div>
   );
 }

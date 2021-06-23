@@ -84,8 +84,9 @@ export const CreatePasswordScreen = () => {
   return (
     <>
       <img src={triangulo} alt="triangulo" className="screen2__triangulo" />  {/* Imagen triangular que señala en que paso del step-progressbar nos encontramos */}
-      {isLoading && <Loading />} {/* cuando isLoading está en true se mostrará el componente Loading */}
+      
       <div className="base__container">
+        {isLoading && <Loading />} {/* cuando isLoading está en true se mostrará el componente Loading */}
         <div className="base__content animate__animated animate__fadeIn">
           <h1>Crea tu Password Manager</h1>
           <div className="base__underline"></div>
