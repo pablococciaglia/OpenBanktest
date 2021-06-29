@@ -105,22 +105,24 @@ export const CreatePasswordScreen = () => {
             validationSchema={validate} /* se ingresan las reglas de validación de formulario que ya se declararon */
 
             onSubmit={values => {   /* llamado a la API pasando los valores recogidos del formulario */
-              setisLoading(true); /* se controla la interfaz de usuario con una pantalla de loading */
-              submitForm(values.password, values.confirmPassword, values.pista)
-              .then(response => setapiresponse(response)) /* Se guardan los valores de la respuesta en el context para que luego los tome la pantalla de feedback */
-              .catch(function(err) {
-                console.log(err); //si bien el manejo del error es tenido en cuenta ya que en la pantalla de feedback mostrará que no se puedo crear Password Manager hago un console.log del error por control de programación
-              })
-              .finally(
-                setTimeout(() => {
-                  setisLoading(false)
-                }, 2900), //desmonta el loading antes de la redireccion
-                setTimeout(() => {
+              
+              
+                setisLoading(true); /* se controla la interfaz de usuario con una pantalla de loading */
+                submitForm(values.password, values.confirmPassword, values.pista)
+                .then(response => setapiresponse(response)) /* Se guardan los valores de la respuesta en el context para que luego los tome la pantalla de feedback */
+                .catch(function(err) {
+                  console.log(err); //si bien el manejo del error es tenido en cuenta ya que en la pantalla de feedback mostrará que no se puedo crear Password Manager hago un console.log del error por control de programación
+                })
+                .finally(() => {
+                  setisLoading(false); //desmonta el loading antes de la redireccion
                   setcheckpoints({...checkpoints, 'passwordAccepted':true}); /* Se setea un checkpoint de envío de contraseña para acceder a la ruta privada del feedback */
                   history.push('./response'); //se redirecciona a la pantalla de feedback
-                }, 3000)
-              );
-            }}
+                });
+                
+                
+              }
+              
+            }
           >
         
             {formik => (
