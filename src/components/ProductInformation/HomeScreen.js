@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Context } from '../Context';
 import imagen1 from '../../assets/img/group.svg';
 import imagen2 from '../../assets/img/group-3.svg';
@@ -7,6 +7,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import triangulo from '../../assets/img/triangulo.png';
 
 export const HomeScreen = () => {
+	const history = useHistory(); //para hacer redirección a links
+
 	/* se declara un useState para habilitar y deshabilitar el botón de "siguiente" */
 	const [accept, setaccept] = useState(true);
 
@@ -27,6 +29,10 @@ export const HomeScreen = () => {
 		} else {
 			setcheckpoints({ ...checkpoints, 'acceptContract': false });
 		}
+	};
+
+	const handleSiguiente = () => {
+		history.push('./create-password');
 	};
 
 	return (
@@ -93,15 +99,14 @@ export const HomeScreen = () => {
 							<button className='btn btn-light'>Cancelar</button>
 						</Tooltip>{' '}
 						{/* se utiliza un tooltip para mostrar una leyenda en el boton de cancelar */}
-						<Link to={'./create-password'}>
-							<button
-								disabled={accept}
-								type='button'
-								className='btn btn-primary'
-							>
-								Siguiente <i className='bi bi-chevron-right'></i>
-							</button>
-						</Link>
+						<button
+							disabled={accept}
+							type='button'
+							className='btn btn-primary'
+							onClick={handleSiguiente}
+						>
+							Siguiente <i className='bi bi-chevron-right'></i>
+						</button>
 					</div>
 				</div>
 			</div>

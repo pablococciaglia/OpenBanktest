@@ -121,7 +121,6 @@ export const CreatePasswordScreen = () => {
 						} /* se ingresan las reglas de validación de formulario que ya se declararon */
 						onSubmit={(values) => {
 							/* llamado a la API pasando los valores recogidos del formulario */
-
 							setisLoading(
 								true
 							); /* se controla la interfaz de usuario con una pantalla de loading */
@@ -133,11 +132,10 @@ export const CreatePasswordScreen = () => {
 									console.log(err); //si bien el manejo del error es tenido en cuenta ya que en la pantalla de feedback mostrará que no se puedo crear Password Manager hago un console.log del error por control de programación
 								})
 								.finally(() => {
-									setisLoading(false); //desmonta el loading antes de la redireccion
 									setcheckpoints({
 										...checkpoints,
 										passwordAccepted: true,
-									}); /* Se setea un checkpoint de envío de contraseña para acceder a la ruta privada del feedback */
+									}); // Se setea un checkpoint de envío de contraseña para acceder a la ruta privada del feedback
 									history.push('./response'); //se redirecciona a la pantalla de feedback
 								});
 						}}
